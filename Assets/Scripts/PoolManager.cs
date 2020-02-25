@@ -57,7 +57,7 @@ using UnityEngine;
 
 // ReSharper disable InconsistentNaming
 
-namespace PoolManager {
+
     public static class PoolManager {
         // You can avoid resizing the size of the list by setting this to a number equal or greater than
         // What you expect mos of your pool sizes to be
@@ -345,4 +345,3 @@ namespace PoolManager {
             public Pool myPool;
         }
     }
-}
