@@ -33,10 +33,10 @@ public class test_runner : MonoBehaviour
 
         float currH = player.position.x;
         if (moveCount <= 0f && movementInput.magnitude > 0.1f) {
-            if (h > 0.1f && currH < 2f) {
-                player.position = new Vector3(player.position.x + 2f, player.position.y, player.position.z);
-            } else if (h < -0.1f && currH > -2f) {
-                player.position = new Vector3(player.position.x - 2f, player.position.y, player.position.z);
+            if (h > 0.1f && currH < 1.5f) {
+                player.position = new Vector3(player.position.x + 1.5f, player.position.y, player.position.z);
+            } else if (h < -0.1f && currH > -1.5f) {
+                player.position = new Vector3(player.position.x - 1.5f, player.position.y, player.position.z);
             }
 
             moveCount = MoveDelay;

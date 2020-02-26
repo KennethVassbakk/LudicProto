@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 593694963}
   - component: {fileID: 593694964}
   - component: {fileID: 593694965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,8 +147,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593694961}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.08, z: -1.9200001}
+  m_LocalRotation: {x: -0.13341215, y: -0, z: -0, w: 0.9910607}
+  m_LocalPosition: {x: 0, y: 0, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1961910659}
@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6f8b12ef0f9294485db4a27e2e6d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  genTrigger: {fileID: 6564057066195741313, guid: 63578dad86c357c49ace37f064475702,
+    type: 3}
 --- !u!54 &593694965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -238,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343d682e9e253ed4d8c4c9f3ae8b4758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileSize: 6
+  tileSize: 12
   tileLength: 15
   preGen: 15
   leftSide:
@@ -246,10 +248,21 @@ MonoBehaviour:
   rightSide:
   - {fileID: 284686697864615872, guid: 6db9b8cfef7500847a87a85ab73c3b77, type: 3}
   ground:
-  - {fileID: 1950836238145749770, guid: e3ea402b1b0904f4a9ea3f9cb7ff63f0, type: 3}
-  collidersLeft: []
-  collidersRight: []
-  collidersCenter: []
+  - {fileID: 7813028616176581483, guid: 8eaa0ea2e47968b4784c36a682642409, type: 3}
+  - {fileID: 7159835796594994534, guid: ef0e8877f8822714cb4668d95c952fb7, type: 3}
+  - {fileID: 3088364382481805704, guid: 2cffc5e4a9ab88e43b8778ce4fcfc769, type: 3}
+  collidersLeft:
+  - {fileID: 1948350576375064084, guid: f6193d6bec8d6434f937764a09f37f09, type: 3}
+  - {fileID: 7850841721392056873, guid: 2d85d9cd12be790488bc00a0222a64e0, type: 3}
+  - {fileID: 7151796009725238300, guid: 6a503e06e05e86d44937d87028ea1631, type: 3}
+  collidersRight:
+  - {fileID: 7850841721392056873, guid: 2d85d9cd12be790488bc00a0222a64e0, type: 3}
+  - {fileID: 1948350576375064084, guid: f6193d6bec8d6434f937764a09f37f09, type: 3}
+  - {fileID: 7151796009725238300, guid: 6a503e06e05e86d44937d87028ea1631, type: 3}
+  collidersCenter:
+  - {fileID: 7151796009725238300, guid: 6a503e06e05e86d44937d87028ea1631, type: 3}
+  - {fileID: 7850841721392056873, guid: 2d85d9cd12be790488bc00a0222a64e0, type: 3}
+  - {fileID: 1948350576375064084, guid: f6193d6bec8d6434f937764a09f37f09, type: 3}
 --- !u!1 &1497936368
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +301,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.509
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -434,7 +447,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783744403}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4e525915d3dafad4bb8abf1417705613, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -496,7 +509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783744403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalPosition: {x: 0, y: 2.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1739579708}
@@ -578,11 +591,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961910656}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.83, z: -10}
+  m_LocalRotation: {x: 0.13341215, y: -0, z: -0, w: 0.9910607}
+  m_LocalPosition: {x: 0, y: 4.72, z: -7.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 593694962}
   m_Father: {fileID: 1739579708}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.334001, y: 0, z: 0}
