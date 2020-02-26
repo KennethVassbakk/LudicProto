@@ -9,7 +9,7 @@ public class test_runner : MonoBehaviour
     public float Speed = 5f;
     public float MoveDelay = .2f;
     public float moveCount = 0f;
-
+    public Transform player;
     // Input Actions
     PlayerInput inputAction;
 
@@ -31,12 +31,12 @@ public class test_runner : MonoBehaviour
     void Update() {
         float h = movementInput.x;
 
-        float currH = transform.position.x;
+        float currH = player.position.x;
         if (moveCount <= 0f && movementInput.magnitude > 0.1f) {
             if (h > 0.1f && currH < 2f) {
-                transform.position = new Vector3(transform.position.x + 2f, transform.position.y, transform.position.z);
+                player.position = new Vector3(player.position.x + 2f, player.position.y, player.position.z);
             } else if (h < -0.1f && currH > -2f) {
-                transform.position = new Vector3(transform.position.x - 2f, transform.position.y, transform.position.z);
+                player.position = new Vector3(player.position.x - 2f, player.position.y, player.position.z);
             }
 
             moveCount = MoveDelay;
