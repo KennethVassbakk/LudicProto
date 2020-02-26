@@ -241,8 +241,10 @@ MonoBehaviour:
   tileSize: 6
   tileLength: 15
   preGen: 15
-  leftSide: []
-  rightSide: []
+  leftSide:
+  - {fileID: 6768141958123369828, guid: 0ccdb4ea81dd7c04bb8538732a2f59d4, type: 3}
+  rightSide:
+  - {fileID: 284686697864615872, guid: 6db9b8cfef7500847a87a85ab73c3b77, type: 3}
   ground:
   - {fileID: 1950836238145749770, guid: e3ea402b1b0904f4a9ea3f9cb7ff63f0, type: 3}
   collidersLeft: []
