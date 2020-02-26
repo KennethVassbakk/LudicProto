@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &8606750107033627356
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676007309086360233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5219829, y: 1.665152, z: 3.215464}
-  m_Center: {x: 0, y: 0.832576, z: -0.0000001192093}
 --- !u!1 &1948350576375064084
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5111161670234521689}
+  - component: {fileID: 6658883775130680773}
   m_Layer: 0
   m_Name: Lane1_HeyCart
   m_TagString: Untagged
@@ -44,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6658883775130680773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948350576375064084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2.5175877}
+  m_Center: {x: 0, y: 1, z: -0.25879383}
 --- !u!1001 &676007309086507755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,12 +103,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 64641482639296590, guid: 132d1de61c7a2714f9cff49ced16356d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 132d1de61c7a2714f9cff49ced16356d, type: 3}
---- !u!1 &676007309086360233 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 147522, guid: 132d1de61c7a2714f9cff49ced16356d,
-    type: 3}
-  m_PrefabInstance: {fileID: 676007309086507755}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &676007309086665891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 454216, guid: 132d1de61c7a2714f9cff49ced16356d,
