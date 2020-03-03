@@ -19,7 +19,7 @@ public class EnemyRunner : MonoBehaviour
     public float MoveDelay = 1f;
     private float moveCount = 0f;
 
-    private bool keepMoving = true;
+    public bool keepMoving = true;
   
 
     // Start is called before the first frame update
