@@ -10,6 +10,7 @@ public class test_runner : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody _rb;
     public float Speed = 5f;
+    public bool keepMoving = true;
 
     public Transform player;
     // Input Actions
@@ -67,7 +68,8 @@ public class test_runner : MonoBehaviour
 
 
         // Move the player forward!
-        transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+        if(keepMoving)
+            transform.Translate(Vector3.forward * Time.deltaTime * Speed);
     }
 
     /// <summary>

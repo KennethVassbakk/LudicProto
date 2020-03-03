@@ -18,6 +18,8 @@ public class EnemyRunner : MonoBehaviour
     private float t = 0;
     public float MoveDelay = 1f;
     private float moveCount = 0f;
+
+    private bool keepMoving = true;
   
 
     // Start is called before the first frame update
@@ -63,7 +65,8 @@ public class EnemyRunner : MonoBehaviour
 
 
         // Move the player forward!
-        transform.Translate(Vector3.forward * Time.deltaTime * runSpeed);
+        if(keepMoving)
+            transform.Translate(Vector3.forward * Time.deltaTime * runSpeed);
     }
 
     public bool CheckClear(Transform t) {
@@ -76,4 +79,5 @@ public class EnemyRunner : MonoBehaviour
             return true;
         }
     }
+
 }
