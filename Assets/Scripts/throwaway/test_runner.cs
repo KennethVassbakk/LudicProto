@@ -7,11 +7,18 @@ public class test_runner : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody _rb;
     public float Speed = 5f;
-    public float MoveDelay = .2f;
-    public float moveCount = 0f;
+
     public Transform player;
     // Input Actions
     PlayerInput inputAction;
+
+    // X Movement
+    public float targetPos = 0f;
+    private Vector3 startPos;
+    private float t = 0;
+    public float moveDuration = 1f;
+    public float MoveDelay = 1f;
+    public float moveCount = 0f;
 
     // Move
     Vector2 movementInput;
@@ -33,20 +40,37 @@ public class test_runner : MonoBehaviour
 
         float currH = player.position.x;
         if (moveCount <= 0f && movementInput.magnitude > 0.1f) {
-            if (h > 0.1f && currH < 1.5f) {
-                player.position = new Vector3(player.position.x + 1.5f, player.position.y, player.position.z);
-            } else if (h < -0.1f && currH > -1.5f) {
-                player.position = new Vector3(player.position.x - 1.5f, player.position.y, player.position.z);
+            if(h > 0.1f && targetPos < 1.5f && currH < 1.5f) {
+                targetPos += 1.5f;
+                startPos = player.position;
+                moveCount = MoveDelay;
+            } else if(h < 0.1f && targetPos > -1.5f && currH > -1.5f) {
+                targetPos -= 1.5f;
+                startPos = player.position;
+                moveCount = MoveDelay;
+            }
+        } else if (moveCount > 0f) {
+
+            // Move to X position
+            t += Time.deltaTime / MoveDelay;
+            player.position = new Vector3(Mathf.Lerp(startPos.x, targetPos, t), player.position.y, player.position.z);
+
+            if (t > 1.0f) {
+                t = 0f;
+                player.position = new Vector3(targetPos, player.position.y, player.position.z);
             }
 
-            moveCount = MoveDelay;
-        } else if (moveCount > 0f) {
+
             moveCount -= Time.deltaTime;
         }
+
+
 
         // Move the player forward!
         transform.Translate(Vector3.forward * Time.deltaTime * Speed);
     }
+
+
 
     private void OnEnable() {
         inputAction.Enable();

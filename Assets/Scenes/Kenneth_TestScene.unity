@@ -406,8 +406,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1373767772}
-  smooth: 5
-  cameraOffset: {x: 0, y: 0, z: 0}
+  smooth: 0.1
+  cameraOffset: {x: 0, y: 2, z: -4.844}
+  minX: -1
+  maxX: 1
 --- !u!1001 &6543976176206066325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +426,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543976176833942440, guid: 9258137e1202e104fa2c4da7b08096a5,
+        type: 3}
+      propertyPath: MoveDelay
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6543976176833942441, guid: 9258137e1202e104fa2c4da7b08096a5,
         type: 3}
