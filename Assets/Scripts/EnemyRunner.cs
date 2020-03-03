@@ -10,6 +10,8 @@ using UnityEngine;
 
 public class EnemyRunner : MonoBehaviour
 {
+    public Animator theAnim;
+
     public float runSpeed = 7f;
     public Transform leftPos, centerPos, rightPos, ER;
     // X Movement
@@ -43,19 +45,24 @@ public class EnemyRunner : MonoBehaviour
                     targetPos = centerPos.position.x;
                 } else if (CheckClear(leftPos)) {
                     targetPos = leftPos.position.x;
+                    theAnim.SetBool("StrafeLeft", true);
                 } else if (CheckClear(rightPos)) {
                     targetPos = rightPos.position.x;
+                    theAnim.SetBool("StrafeRight", true);
                 }
                 startPos.x = ER.position.x;
                 moveCount = MoveDelay;
             }
         } else if (moveCount > 0f) {
 
+            
             // Move to X position
             t += Time.deltaTime / MoveDelay;
             ER.position = new Vector3(Mathf.Lerp(startPos.x, targetPos, t), ER.position.y, ER.position.z);
 
             if (t > 1.0f) {
+                theAnim.SetBool("StrafeRight", false);
+                theAnim.SetBool("StrafeLeft", false);
                 t = 0f;
                 ER.position = new Vector3(targetPos, ER.position.y, ER.position.z);
             }

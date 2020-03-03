@@ -9,6 +9,7 @@ public class test_runner : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody _rb;
+    public Animator _Anim;
     public float Speed = 5f;
     public bool keepMoving = true;
 
@@ -26,6 +27,9 @@ public class test_runner : MonoBehaviour
     // Move
     Vector2 movementInput;
 
+    //Animation
+    
+
     private void Awake() {
         inputAction = new PlayerInput();
         inputAction.PlayerControls.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
@@ -35,11 +39,13 @@ public class test_runner : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update() {
         float h = movementInput.x;
+
 
         float currH = player.position.x;
         if (moveCount <= 0f && movementInput.magnitude > 0.1f) {
@@ -51,6 +57,7 @@ public class test_runner : MonoBehaviour
                 targetPos -= 1.5f;
                 startPos = player.position;
                 moveCount = MoveDelay;
+
             }
         } else if (moveCount > 0f) {
 
@@ -62,13 +69,12 @@ public class test_runner : MonoBehaviour
                 t = 0f;
                 player.position = new Vector3(targetPos, player.position.y, player.position.z);
             }
-
             moveCount -= Time.deltaTime;
         }
 
 
         // Move the player forward!
-        if(keepMoving)
+        if (keepMoving)
             transform.Translate(Vector3.forward * Time.deltaTime * Speed);
     }
 
