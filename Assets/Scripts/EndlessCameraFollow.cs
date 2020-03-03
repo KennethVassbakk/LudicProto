@@ -2,7 +2,9 @@
  *  Author: Kenneth Vassbakk 
  */
 using UnityEngine;
-
+/**
+ *  Author: Kenneth Vassbakk 
+ */
 public class EndlessCameraFollow : MonoBehaviour
 {
     public Transform target;
