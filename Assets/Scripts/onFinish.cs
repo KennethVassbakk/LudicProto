@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/**
+ *  Author: Kenneth Vassbakk 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
