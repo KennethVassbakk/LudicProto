@@ -5222,17 +5222,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Snow_Particle
       objectReference: {fileID: 0}
+    - target: {fileID: 135614, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 476424, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 476424, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.6
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 476424, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.75
+      value: 19.6
       objectReference: {fileID: 0}
     - target: {fileID: 476424, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5304,7 +5308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19813558, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 19813558, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
       propertyPath: InitialModule.maxNumParticles
@@ -5354,6 +5358,18 @@ PrefabInstance:
       propertyPath: SizeBySpeedModule.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19813558, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.18039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 19813558, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19912218, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943c274d6be6c44db87f636d06bcd3a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d19b87197825d84bb39ac334a47eaf8, type: 3}
 --- !u!4 &1652284342 stripped
