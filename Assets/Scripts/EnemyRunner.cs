@@ -1,5 +1,8 @@
 ﻿/**
  *  Author: Kenneth Vassbakk 
+ *  This is a really dumb runner AI
+ *  It just runs forward, checks if i ts about to collider, and moves.
+ *  It's biased towards the center lane.
  */
 using System.Collections;
 using System.Collections.Generic;
