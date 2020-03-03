@@ -39,17 +39,13 @@ public class EnemyRunner : MonoBehaviour
                 // This also makes the enemy center biasec
                 if (CheckClear(centerPos)) {
                     targetPos = centerPos.position.x;
-                    startPos.x = ER.position.x;
-                    moveCount = MoveDelay;
                 } else if (CheckClear(leftPos)) {
                     targetPos = leftPos.position.x;
-                    startPos.x = ER.position.x;
-                    moveCount = MoveDelay;
                 } else if (CheckClear(rightPos)) {
                     targetPos = rightPos.position.x;
-                    startPos.x = ER.position.x;
-                    moveCount = MoveDelay;
                 }
+                startPos.x = ER.position.x;
+                moveCount = MoveDelay;
             }
         } else if (moveCount > 0f) {
 
