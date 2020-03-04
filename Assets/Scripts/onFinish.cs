@@ -12,6 +12,13 @@ public class onFinish : MonoBehaviour
     public GameObject Success;
     public GameObject Failure;
 
+    public GameObject _gm;
+    private Endless_Story _st;
+
+    private void Start() {
+        _st = _gm.GetComponent<Endless_Story>();
+    }
+
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Finish") {
             Debug.Log("We've hit the target!");
@@ -20,6 +27,7 @@ public class onFinish : MonoBehaviour
             Success.SetActive(true);
             Crossfade.GetComponent<Animator>().SetTrigger("Start");
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            _st.finish(true);
 
         } else if (other.gameObject.tag == "Env") {
             Debug.Log("We've hit an obstruction!");
@@ -27,6 +35,7 @@ public class onFinish : MonoBehaviour
             Failure.SetActive(true);
             Crossfade.GetComponent<Animator>().SetTrigger("Start");
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            _st.finish(false);
         }
     }
 

@@ -29,7 +29,15 @@ public class Endless_Story : MonoBehaviour
         started = true;
         player.GetComponent<test_runner>().keepMoving = true;
         enemy.GetComponent<EnemyRunner>().keepMoving = true;
-        _as.Stop();
+        StartCoroutine(FadeMixerGroup.StartFade(_as.outputAudioMixerGroup.audioMixer, "vol1", 1f, 0f, _as));
+    }
 
+    public void finish(bool success) {
+        if(success) {
+            _as.clip = sucessAudio;
+        } else {
+            _as.clip = failAudio;
+        }
+        _as.Play();
     }
 }

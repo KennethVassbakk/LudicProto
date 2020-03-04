@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[ExecuteInEditMode]
+
 [AddComponentMenu("Image Effects/Frost")]
 public class FrostEffect : MonoBehaviour
 {
