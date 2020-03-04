@@ -12,6 +12,9 @@ public class FrostControl : MonoBehaviour
     [Range(0, 100)]public float Frost;
 
     private FrostEffect FrostFX;
+    private test_runner SpeedScript;
+    private float storedSpeed;
+
     public Animator PlayerAnim;
 
     [Header("How often and how much, add / remove frost value")]
@@ -24,7 +27,8 @@ public class FrostControl : MonoBehaviour
     void Start()
     {
         FrostFX = Camera.main.GetComponent<FrostEffect>();
-
+        SpeedScript = GetComponent<test_runner>();
+        storedSpeed = SpeedScript.Speed;
         //SetTimer
         Timer = frostUpdate;
     }
