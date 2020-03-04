@@ -47,7 +47,9 @@ public class FrostControl : MonoBehaviour
     private void UpdateFrost()
     {
         FrostFX.FrostAmount = Frost / 100;
-        PlayerAnim.SetLayerWeight(2, Frost / 100 - 0.1f);
+        PlayerAnim.SetLayerWeight(2, Frost / 50 - 0.1f);
+        SpeedScript.Speed = storedSpeed - (Frost / 40);
+        SpeedScript.Speed =  Mathf.Clamp(SpeedScript.Speed, 0f, storedSpeed);
     }
 
     public void AddFrost(int frostToAdd)

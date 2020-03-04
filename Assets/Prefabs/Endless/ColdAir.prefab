@@ -19167,7 +19167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3190992566624356400
 Transform:
   m_ObjectHideFlags: 0
@@ -19217,7 +19217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 10
+  FrostAmount: 15
   TimerInterval: 1
   FrostControl: {fileID: 0}
 --- !u!65 &1187210342

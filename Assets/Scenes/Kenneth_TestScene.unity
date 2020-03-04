@@ -965,25 +965,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!1 &1187210338 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5084914041369478701, guid: dfd45e9407566ab4c8b64f14bbe3e87d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1960720090}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1187210342
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187210338}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 3}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1284323378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,18 +1426,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: ColdAir
       objectReference: {fileID: 0}
-    - target: {fileID: 5084914041369478701, guid: dfd45e9407566ab4c8b64f14bbe3e87d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 5309254313260595505, guid: dfd45e9407566ab4c8b64f14bbe3e87d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9035142763111283353, guid: dfd45e9407566ab4c8b64f14bbe3e87d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfd45e9407566ab4c8b64f14bbe3e87d, type: 3}
 --- !u!1001 &3534648024057913028
 PrefabInstance:
