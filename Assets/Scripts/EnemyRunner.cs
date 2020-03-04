@@ -38,17 +38,20 @@ public class EnemyRunner : MonoBehaviour
         if (moveCount <= 0f) {
             // CHeck if we are about to collide with something!
             if (!CheckClear(ER)) {
-
+                Debug.Log("We're going to crash!");
                 // Move to center if it's clear
                 // This also makes the enemy center biasec
                 if (CheckClear(centerPos)) {
                     targetPos = centerPos.position.x;
+                    Debug.Log("Center Lane Clear!");
                 } else if (CheckClear(leftPos)) {
                     targetPos = leftPos.position.x;
                     theAnim.SetBool("StrafeLeft", true);
+                    Debug.Log("LeftLane Clear!");
                 } else if (CheckClear(rightPos)) {
                     targetPos = rightPos.position.x;
                     theAnim.SetBool("StrafeRight", true);
+                    Debug.Log("RightLane Clear!");
                 }
                 startPos.x = ER.position.x;
                 moveCount = MoveDelay;
