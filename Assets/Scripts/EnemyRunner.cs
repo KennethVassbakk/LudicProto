@@ -81,11 +81,11 @@ public class EnemyRunner : MonoBehaviour
 
     public bool CheckClear(Transform t) {
         RaycastHit hit;
-        if(Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit, 10f)) {
+        if(Physics.Raycast(t.position, t.TransformDirection(Vector3.forward), out hit, 12f)) {
             Debug.DrawRay(t.position, t.TransformDirection(Vector3.forward) * hit.distance, Color.red); // Debug line!
             return false;
         } else {
-            Debug.DrawRay(t.position, t.TransformDirection(Vector3.forward) * 10f, Color.yellow); // Debug line!
+            Debug.DrawRay(t.position, t.TransformDirection(Vector3.forward) * 12f, Color.yellow); // Debug line!
             return true;
         }
     }
