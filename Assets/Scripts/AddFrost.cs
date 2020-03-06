@@ -39,12 +39,16 @@ public class AddFrost : MonoBehaviour
             playerHere = true;
             FrostControl =  other.transform.parent.GetComponent<FrostControl>();
             FrostControl.AddFrost(FrostAmount);
+            Camera.main.GetComponent<affectFrost>().setFreezing(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) { playerHere = false; }
+        if (other.CompareTag("Player")) { 
+            playerHere = false;
+            Camera.main.GetComponent<affectFrost>().setFreezing(false);
+        }
     }
 
 }
