@@ -28,7 +28,7 @@ public class FrostControl : MonoBehaviour
     {
         FrostFX = Camera.main.GetComponent<FrostEffect>();
         SpeedScript = GetComponent<test_runner>();
-        storedSpeed = SpeedScript.Speed;
+        storedSpeed = SpeedScript.BaseSpeed;
         //SetTimer
         Timer = frostUpdate;
     }
@@ -46,15 +46,15 @@ public class FrostControl : MonoBehaviour
 
     private void UpdateFrost()
     {
-        FrostFX.FrostAmount = Frost / 100;
+        FrostFX.FrostAmount = Mathf.Clamp(Frost / 100,0,1);
         PlayerAnim.SetLayerWeight(2, Frost / 50 - 0.1f);
-        SpeedScript.Speed = storedSpeed - (Frost / 40);
-        SpeedScript.Speed =  Mathf.Clamp(SpeedScript.Speed, 0f, storedSpeed);
+        SpeedScript.currentSpeed = storedSpeed - (Frost / 40);
+        SpeedScript.currentSpeed =  Mathf.Clamp(SpeedScript.currentSpeed, 0f, storedSpeed);
     }
 
     public void AddFrost(int frostToAdd)
     {
-        Frost += frostToAdd;
+        Frost = Mathf.Clamp(Frost + frostToAdd, 0, 100);
         UpdateFrost();
     }
 }

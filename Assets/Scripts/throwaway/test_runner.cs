@@ -10,7 +10,7 @@ public class test_runner : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody _rb;
     public Animator _Anim;
-    public float Speed = 5f;
+    public float BaseSpeed = 8f;
     public bool keepMoving = true;
 
     public Transform player;
@@ -24,6 +24,8 @@ public class test_runner : MonoBehaviour
     public float MoveDelay = 1f;
     public float moveCount = 0f;
 
+    public float currentSpeed;
+
     // Move
     Vector2 movementInput;
 
@@ -34,6 +36,7 @@ public class test_runner : MonoBehaviour
         inputAction = new PlayerInput();
         inputAction.PlayerControls.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
         moveCount = MoveDelay;
+        currentSpeed = BaseSpeed;
     }
 
     void Start()
@@ -75,7 +78,7 @@ public class test_runner : MonoBehaviour
 
         // Move the player forward!
         if (keepMoving)
-            transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed);
     }
 
     /// <summary>

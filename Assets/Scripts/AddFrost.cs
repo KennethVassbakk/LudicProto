@@ -35,7 +35,6 @@ public class AddFrost : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("here");
             playerHere = true;
             FrostControl =  other.transform.parent.GetComponent<FrostControl>();
             FrostControl.AddFrost(FrostAmount);

@@ -19217,7 +19217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 15
+  FrostAmount: 5
   TimerInterval: 1
   FrostControl: {fileID: 0}
 --- !u!65 &1187210342
