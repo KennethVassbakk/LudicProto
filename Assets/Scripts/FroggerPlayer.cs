@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ *  Author: John Hauge
+ *  Frogger Movement Script
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -31,20 +35,17 @@ public class FroggerPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ClickDetect);
-
-        
         if (ClickDetect > 0.1f)
         {
-
             Ray castPoint = Camera.main.ScreenPointToRay(Destination);
+
             RaycastHit hit;
             if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
             {
-                Player.SetDestination(hit.transform.position);
+                Player.SetDestination(hit.point);
+                
             }
         }
-        
     }
 
 
