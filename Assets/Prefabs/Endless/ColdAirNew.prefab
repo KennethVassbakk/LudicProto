@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6909292564819865133
 Transform:
   m_ObjectHideFlags: 0
@@ -4772,9 +4772,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6909292564835016603}
+  - component: {fileID: 6907720756614081443}
   m_Layer: 10
   m_Name: ColdAirNew
-  m_TagString: Untagged
+  m_TagString: Env
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4797,6 +4798,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6907720756614081443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6909292564835016604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6909292564999901028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4889,7 +4903,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1403901578353185903
 MonoBehaviour:
@@ -4903,7 +4917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 10
+  FrostAmount: 30
   TimerInterval: 2
   FrostControl: {fileID: 0}
 --- !u!1 &6909292565075877665
@@ -4931,7 +4945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6909292565075877665}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6909292564819865133}
@@ -4956,7 +4970,7 @@ MonoBehaviour:
   - {fileID: 6909292564999901028}
   - {fileID: 6909292566028154892}
   - {fileID: 6909292566089818344}
-  Speed: 1.2
+  Speed: 5
 --- !u!1 &6909292565604924484
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5076,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -5072,7 +5086,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5179,7 +5193,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.09019608}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5822,7 +5836,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6277,7 +6291,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 11565
+        atime1: 27756
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -9803,7 +9817,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5734283811158435903
 MonoBehaviour:
@@ -9817,7 +9831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 10
+  FrostAmount: 30
   TimerInterval: 2
   FrostControl: {fileID: 0}
 --- !u!1 &6909292566089818344
@@ -9912,7 +9926,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6428928341088613425
 MonoBehaviour:
@@ -9926,7 +9940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 10
+  FrostAmount: 30
   TimerInterval: 2
   FrostControl: {fileID: 0}
 --- !u!1 &6909292566636558778
@@ -9955,7 +9969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6909292566636558778}
   m_LocalRotation: {x: 0.00000011560444, y: 0.7071069, z: 0.7071067, w: -0.000000104308114}
-  m_LocalPosition: {x: -0.0000000832137, y: 1, z: 0.07799998}
+  m_LocalPosition: {x: 0.000000052154036, y: 1, z: 0.25}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 6909292565075877664}
@@ -10044,7 +10058,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10151,7 +10165,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.752, g: 1, b: 0.96, a: 0.9411765}
+      maxColor: {r: 0.865, g: 1, b: 0.9785714, a: 0.05882353}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

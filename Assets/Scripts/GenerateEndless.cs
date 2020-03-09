@@ -121,7 +121,6 @@ public class GenerateEndless : MonoBehaviour
         if (other.gameObject.tag == "Env") {
             Vector3 position = other.gameObject.transform.position;
             PoolManager.Despawn(other.gameObject);
-            
         }
 
         if (other.gameObject.tag == "GenTrigger") {

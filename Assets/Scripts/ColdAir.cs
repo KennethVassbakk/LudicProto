@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/**
+ *  Author: John Hauge
+ *  Cold Air Movement Script for Endless Runner
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +26,18 @@ public class ColdAir : MonoBehaviour
         positionTracker = transform.position.z - 2;
     }
 
+    private void OnEnable()
+    {
+        transform.position = transform.parent.position;
+        colCounter = 0;
+        positionTracker = transform.position.z - 2;
+
+        colliders[0].transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+        colliders[1].transform.position = new Vector3(transform.position.x, 1f, transform.position.z + 2);
+        colliders[2].transform.position = new Vector3(transform.position.x, 1f, transform.position.z + 4);
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +58,8 @@ public class ColdAir : MonoBehaviour
 
             if (Physics.Raycast(movePoint, transform.forward, out hit, 6f, layerMask) && moveLeft == false && moveRight == false)
             {
+                if (hit.transform.gameObject.CompareTag("Player")) { return; }
+
                 if (moveLeft == false && moveRight == false && hit.transform.gameObject.CompareTag("Env"))
                 {
                     if (transform.position.x < -0.5f)

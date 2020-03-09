@@ -1194,7 +1194,7 @@ MonoBehaviour:
   Frost: 0
   PlayerAnim: {fileID: 1636247362}
   frostUpdate: 2
-  FrostToGive: -10
+  FrostToGive: -20
 --- !u!1 &1446289543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1444,11 @@ PrefabInstance:
       propertyPath: MoveDelay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3534648024603446481, guid: 7054ee948e8b5ed44bce653ac09a4ff8,
+        type: 3}
+      propertyPath: runSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3534648024603446487, guid: 7054ee948e8b5ed44bce653ac09a4ff8,
         type: 3}
       propertyPath: m_Name
@@ -1492,13 +1497,7 @@ PrefabInstance:
     - target: {fileID: 278957527016238141, guid: 9258137e1202e104fa2c4da7b08096a5,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Finger_02 1'\n\tTransform 'Elbow_R'\n\tTransform
-        'Clavicle_L'\n\tTransform 'Finger_01'\n\tTransform 'Elbow_L'\n\tTransform
-        'Hand_L'\n\tTransform 'Finger_01 1'\n\tTransform 'Shoulder_L'\n\tTransform
-        'Clavicle_R'\n\tTransform 'Shoulder_R'\n\tand more ...\n\tFrom animation
-        clip 'Freezing Pose'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 278957527016238141, guid: 9258137e1202e104fa2c4da7b08096a5,
         type: 3}
@@ -1523,7 +1522,12 @@ PrefabInstance:
     - target: {fileID: 6543976176833942440, guid: 9258137e1202e104fa2c4da7b08096a5,
         type: 3}
       propertyPath: BaseSpeed
-      value: 8
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543976176833942440, guid: 9258137e1202e104fa2c4da7b08096a5,
+        type: 3}
+      propertyPath: MoveDelay
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6543976176833942441, guid: 9258137e1202e104fa2c4da7b08096a5,
         type: 3}

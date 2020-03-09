@@ -14,9 +14,11 @@ public class onFinish : MonoBehaviour
 
     public GameObject _gm;
     private Endless_Story _st;
+    private GameObject EnemyRunner;
 
     private void Start() {
         _st = _gm.GetComponent<Endless_Story>();
+        EnemyRunner = GameObject.FindGameObjectWithTag("Finish");
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -29,7 +31,8 @@ public class onFinish : MonoBehaviour
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             _st.finish(true);
 
-        } else if (other.gameObject.tag == "Env") {
+        } else if (other.gameObject.tag == "Env" &&  other.gameObject.layer == 10 == false) {
+            
             Debug.Log("We've hit an obstruction!");
             this.gameObject.transform.parent.GetComponent<test_runner>().keepMoving = false;
             Failure.SetActive(true);
@@ -39,4 +42,18 @@ public class onFinish : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        float LooseDistance = Vector3.Distance(transform.position, EnemyRunner.transform.position);
+
+        if (LooseDistance > 20f)
+        {
+            this.gameObject.transform.parent.GetComponent<test_runner>().keepMoving = false;
+            Failure.SetActive(true);
+            Crossfade.GetComponent<Animator>().SetTrigger("Start");
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            _st.finish(false);
+        }
+
+    }
 }
