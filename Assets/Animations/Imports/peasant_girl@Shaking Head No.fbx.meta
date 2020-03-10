@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 6d386f594e17ea14fb65deaec950d8f2
+guid: dc09418d560e4e444982e2bcb907b24a
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Idle
+    second: Shaking Head No
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Shaking Head No
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 499
+      lastFrame: 54
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
