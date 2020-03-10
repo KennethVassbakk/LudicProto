@@ -1447,7 +1447,7 @@ PrefabInstance:
     - target: {fileID: 3534648024603446481, guid: 7054ee948e8b5ed44bce653ac09a4ff8,
         type: 3}
       propertyPath: runSpeed
-      value: 4.5
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 3534648024603446487, guid: 7054ee948e8b5ed44bce653ac09a4ff8,
         type: 3}
@@ -1522,7 +1522,7 @@ PrefabInstance:
     - target: {fileID: 6543976176833942440, guid: 9258137e1202e104fa2c4da7b08096a5,
         type: 3}
       propertyPath: BaseSpeed
-      value: 5
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 6543976176833942440, guid: 9258137e1202e104fa2c4da7b08096a5,
         type: 3}
