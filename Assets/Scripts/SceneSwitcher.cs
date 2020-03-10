@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
+    [Header("Drag CrossFade Object in  here!")]
     public Animator transition;
 
     public void NextLevel()
