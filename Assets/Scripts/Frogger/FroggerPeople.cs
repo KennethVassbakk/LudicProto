@@ -13,16 +13,17 @@ public class FroggerPeople : MonoBehaviour
 
     private GameObject theActiveOne;
 
-    private bool go;
+    public bool go;
     private bool movingOut;
     public bool PlayerGoal;
+    private bool playerInteracted;
 
 
     private float counter;
 
     private void Start()
     {
-        theActiveOne = PeopleSkins[Random.Range(0, PeopleSkins.Count - 1)];
+        theActiveOne = PeopleSkins[Random.Range(0, PeopleSkins.Count)];
         theActiveOne.SetActive(true);
         theAnim = theActiveOne.GetComponent<Animator>();
         thisAgent = GetComponent<NavMeshAgent>();
@@ -35,11 +36,12 @@ public class FroggerPeople : MonoBehaviour
     {
         if (go == true)
         {
+            thisAgent.isStopped = true;
             counter -= Time.deltaTime;
 
             if(counter < 0f)
             {
-                if (PlayerGoal == true)
+                if (PlayerGoal == true && playerInteracted == true)
                 {
                     theAnim.SetTrigger("GotItem");
                     PlayerGoal = false;
@@ -54,21 +56,26 @@ public class FroggerPeople : MonoBehaviour
                 return;
             }
         }
+        else
+        {
+            thisAgent.isStopped = false;
+        }
 
         float exitdist = Vector3.Distance(transform.position, myExit);
 
         if (exitdist < 2f)
         {
-            Destroy(transform.gameObject);
+            transform.gameObject.SetActive(false);
         }
 
     }
 
-    public void Interact(float Length)
+    public void Interact(float Length, bool playerInter)
     {
+        playerInteracted = playerInter;
         counter = Length;
+        thisAgent.isStopped = true;
         theAnim.SetTrigger("Interaction");
         go = true;
     }
-
 }

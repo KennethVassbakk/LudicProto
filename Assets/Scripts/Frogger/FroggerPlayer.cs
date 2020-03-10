@@ -82,7 +82,7 @@ public class FroggerPlayer : MonoBehaviour
                         Person = hit.transform.gameObject;
                         counter = SaleTime;
                         selling = true;
-                        hit.transform.parent.GetComponent<FroggerPeople>().Interact(SaleTime);
+                        hit.transform.parent.GetComponent<FroggerPeople>().Interact(SaleTime, true);
                         return;
                     }
                 }

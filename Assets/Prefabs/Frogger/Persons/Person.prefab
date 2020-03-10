@@ -55,6 +55,7 @@ MonoBehaviour:
   - {fileID: 5197242498430325464}
   - {fileID: 1127329540945298606}
   Exits: []
+  go: 0
   PlayerGoal: 0
 --- !u!195 &1119515858
 NavMeshAgent:
@@ -174,7 +175,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6831231262192411088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -244,6 +245,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 95217205003396926, guid: e169e4d9dbd157b498e582065a5f9302,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 137224820103428480, guid: e169e4d9dbd157b498e582065a5f9302,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -361,6 +367,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 9517826, guid: da95f7d3c32f0ae409c0d2c1c8b88511, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da95f7d3c32f0ae409c0d2c1c8b88511, type: 3}
 --- !u!1 &1127329540945298606 stripped
@@ -439,6 +449,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 95511887735396104, guid: 24362449162558a49bc6904c0fda923a,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 137007448227194800, guid: 24362449162558a49bc6904c0fda923a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -557,6 +572,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 95474626191974340, guid: 15a550206f811c346b37f3a3f4495178,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 137127946073595292, guid: 15a550206f811c346b37f3a3f4495178,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -675,6 +695,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 95082879787689830, guid: e3d9a5b7a19f9684d9b63308cdfa95bd,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 137206393595899520, guid: e3d9a5b7a19f9684d9b63308cdfa95bd,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -792,6 +817,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 9521986, guid: 4b94a93fa70935041b61d500fb573a22, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b94a93fa70935041b61d500fb573a22, type: 3}
 --- !u!1 &4993674932721202027 stripped
@@ -870,6 +899,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 95060489484656484, guid: e85f10072d335224984d9b8ae2e93843,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 137088004552560398, guid: e85f10072d335224984d9b8ae2e93843,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -987,6 +1021,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b03f69198873f994e8ca8d8da4907f22, type: 2}
+    - target: {fileID: 9598360, guid: 5bec398114a29f44286d4e48bb0e0de3, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bec398114a29f44286d4e48bb0e0de3, type: 3}
 --- !u!1 &5197242498430325464 stripped
