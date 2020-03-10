@@ -27,8 +27,13 @@ public class Endless_Story : MonoBehaviour
     public void startGame() {
         Debug.Log("STARTING!");
         started = true;
-        player.GetComponent<test_runner>().keepMoving = true;
-        enemy.GetComponent<EnemyRunner>().keepMoving = true;
+        
+        if(player)
+            player.GetComponent<test_runner>().keepMoving = true;
+        
+        if(enemy)
+            enemy.GetComponent<EnemyRunner>().keepMoving = true;
+        
         StartCoroutine(FadeMixerGroup.StartFade(_as.outputAudioMixerGroup.audioMixer, "vol1", 1f, 0f, _as));
     }
 
