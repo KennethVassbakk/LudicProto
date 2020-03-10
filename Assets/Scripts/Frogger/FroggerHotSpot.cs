@@ -13,6 +13,7 @@ public class FroggerHotSpot : MonoBehaviour
         Debug.Log("Entered");
         if (other.gameObject.tag == "Player")
         {
+            other.GetComponent<FroggerPlayer>().Warmth(true, transform.gameObject);
             Debug.Log("Entered2");
             StoredValue = other.GetComponent<FrostControlFrogger>().FrostToGive;
             other.GetComponent<FrostControlFrogger>().FrostToGive = HeatValue * -1f;
@@ -23,6 +24,7 @@ public class FroggerHotSpot : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.GetComponent<FroggerPlayer>().Warmth(false, transform.gameObject);
             other.GetComponent<FrostControlFrogger>().FrostToGive = StoredValue;
         }
         

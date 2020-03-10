@@ -17,6 +17,10 @@ public class FroggerPlayer : MonoBehaviour
     PlayerInput inputLocation;
     PlayerInput inputAction;
 
+    private bool warmingUp;
+    private GameObject Tourch;
+    private float turnSpeed = 2f;
+
     //Try to sell
     public float SaleTime;
 
@@ -55,6 +59,9 @@ public class FroggerPlayer : MonoBehaviour
         previousPosition = transform.position;
 
         theAnim.SetFloat("Speed", curSpeed);
+
+
+
         if (ClickDetect > 0.1f && selling == false)
         {
             Player.isStopped = false;
@@ -70,7 +77,7 @@ public class FroggerPlayer : MonoBehaviour
 
                     float dist = Direction.magnitude;
                     Debug.Log(dist);
-                    if (dist < 4f)
+                    if (dist < 3f)
                     {
                         Person = hit.transform.gameObject;
                         counter = SaleTime;
@@ -92,6 +99,30 @@ public class FroggerPlayer : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (curSpeed < 0.1 && warmingUp == true)
+        {
+            Vector3 targetFix = new Vector3(Tourch.transform.position.x, transform.position.y, Tourch.transform.position.z);
+            Vector3 targetDir = targetFix - transform.position;
+
+            float singleStep = turnSpeed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, singleStep, 0.0f);
+
+            Player.transform.rotation = Quaternion.LookRotation(newDir);
+
+            if (Vector3.Angle(transform.forward,targetDir) < 3f)
+            {
+                theAnim.SetBool("Pray", true);
+            }
+
+        }
+        else if (warmingUp == true)
+        {
+            theAnim.SetBool("Pray", false);
+        }
+    }
+
     public void TryToSell()
     {
         
@@ -106,6 +137,17 @@ public class FroggerPlayer : MonoBehaviour
             theAnim.SetLayerWeight(2, prevWeight);
             theAnim.SetBool("Pray", false);
             selling = false;
+        }
+    }
+
+    public void Warmth(bool heat,GameObject HeatSource)
+    {
+        Tourch = HeatSource;
+        warmingUp = heat;
+
+        if(heat == false)
+        {
+            theAnim.SetBool("Pray", heat);
         }
     }
 
