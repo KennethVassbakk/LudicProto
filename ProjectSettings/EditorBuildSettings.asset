@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kenneth_TestScene.unity
     guid: f381772d572b8d04c9b8369e33453d36
+  - enabled: 1
+    path: Assets/Scenes/Frogger.unity
+    guid: 13cb6ce2fbea4164ab0fa1d56c772a2a
+  - enabled: 1
+    path: Assets/Scenes/EndCredits.unity
+    guid: 422529f61352c514d9852f83a962546a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3157dfb01f4ed3e469cbcfca71fd7000,
       type: 2}
