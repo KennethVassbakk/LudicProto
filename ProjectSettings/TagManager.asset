@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Env
   - GenTrigger
+  - Person
   layers:
   - Default
   - TransparentFX
