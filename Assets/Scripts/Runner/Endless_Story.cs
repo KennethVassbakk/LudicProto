@@ -38,11 +38,13 @@ public class Endless_Story : MonoBehaviour
     }
 
     public void finish(bool success) {
-        if(success) {
+        if(success && failAudio) {
             _as.clip = sucessAudio;
-        } else {
+            _as.Play();
+        } else if (!success && failAudio) {
             _as.clip = failAudio;
+            _as.Play();
         }
-        _as.Play();
+       
     }
 }
