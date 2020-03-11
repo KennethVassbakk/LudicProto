@@ -19,6 +19,12 @@ public class FroggerLevelManager : MonoBehaviour
     private float counter;
     private float t = 0f;
 
+    [Header("The Fog")]
+    public GameObject fog1;
+    public GameObject fog2;
+
+    public Animator cart;
+
 
     void Start()
     {
@@ -28,7 +34,6 @@ public class FroggerLevelManager : MonoBehaviour
 
         // Give a random person in the scene the objective.
         People = GameObject.FindGameObjectsWithTag("Person");
-        Debug.Log(People.Length + "People in the Scene");
         People[Random.Range(0, People.Length - 1)].GetComponentInParent<FroggerPeople>().PlayerGoal = true;
 
         LeaveInterval = LevelTimeMinutes / People.Length;
@@ -41,12 +46,18 @@ public class FroggerLevelManager : MonoBehaviour
     {
         counter -= Time.deltaTime;
 
-        if (counter < leavetrigger && personToLeave < People.Length)
+        if (counter < leavetrigger && counter < 0f)
         {
-            Debug.Log("PersonLeft");
             People[personToLeave].GetComponentInParent<FroggerPeople>().Interact(0f, false);
             personToLeave += 1;
             leavetrigger = counter - LeaveInterval;
+        }
+
+         if (counter < 0f)
+        {
+            fog1.SetActive(true);
+            fog2.SetActive(true);
+            cart.SetTrigger("Move");
         }
 
         //Lerp Sun Color for the day's duration

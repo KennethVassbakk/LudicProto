@@ -6,12 +6,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class FroggerPlayer : MonoBehaviour
 {
     private NavMeshAgent Player;
     private Vector3 Destination;
     private float ClickDetect;
+    private bool click;
+
+    public GameObject MoveIndicator;
     private float counter;
 
     PlayerInput inputLocation;
@@ -23,6 +27,8 @@ public class FroggerPlayer : MonoBehaviour
 
     //Try to sell
     public float SaleTime;
+    public List<string> SaleLines;
+    public TextMeshPro textObj;
 
     private bool selling;
     private GameObject Person;
@@ -46,7 +52,7 @@ public class FroggerPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        prevWeight = theAnim.GetLayerWeight(2);
+        prevWeight = theAnim.GetLayerWeight(1);
         Player = GetComponent<NavMeshAgent>();
         selling = false;
     }
@@ -64,15 +70,24 @@ public class FroggerPlayer : MonoBehaviour
 
         if (ClickDetect > 0.1f && selling == false)
         {
+
+
             Player.isStopped = false;
             Ray castPoint = Camera.main.ScreenPointToRay(Destination);
 
             RaycastHit hit;
             if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
             {
-                
+                if (click == false)
+                {
+                    click = true;
+                    MoveIndicator.transform.position = hit.point;
+                    MoveIndicator.SetActive(true);
+                }
+
                 if (hit.transform.gameObject.CompareTag("Person"))
                 {
+                    MoveIndicator.SetActive(false);
                     Vector3 Direction = transform.position - hit.transform.position;
 
                     float dist = Direction.magnitude;
@@ -81,6 +96,7 @@ public class FroggerPlayer : MonoBehaviour
                     {
                         Person = hit.transform.gameObject;
                         counter = SaleTime;
+                        textObj.text = SaleLines[Random.Range(0, SaleLines.Count - 1)];
                         selling = true;
                         hit.transform.parent.GetComponent<FroggerPeople>().Interact(SaleTime, true);
                         return;
@@ -89,6 +105,10 @@ public class FroggerPlayer : MonoBehaviour
 
                 Player.SetDestination(hit.point);
             }
+        }
+        else
+        {
+            click = false;
         }
 
         if (selling == true)
@@ -103,6 +123,12 @@ public class FroggerPlayer : MonoBehaviour
     {
         if (curSpeed < 0.1 && warmingUp == true)
         {
+            if (Tourch.GetComponent<FroggerHotSpot>().HeatValue < 1)
+            {
+                Warmth(false, Tourch);
+                return;
+            }
+
             Vector3 targetFix = new Vector3(Tourch.transform.position.x, transform.position.y, Tourch.transform.position.z);
             Vector3 targetDir = targetFix - transform.position;
 
@@ -121,12 +147,17 @@ public class FroggerPlayer : MonoBehaviour
         {
             theAnim.SetBool("Pray", false);
         }
+       
+        if(curSpeed < 0.1)
+        {
+            MoveIndicator.SetActive(false);
+        }
     }
 
     public void TryToSell()
     {
-        
-        theAnim.SetLayerWeight(2, 1f);
+        textObj.transform.rotation.SetLookRotation(textObj.transform.position - Camera.main.transform.position);
+        theAnim.SetLayerWeight(1, 1f);
         theAnim.SetBool("Pray", true);
         counter -= Time.deltaTime;
         Vector3 lookAt = new Vector3(Person.transform.position.x, transform.position.y, Person.transform.position.z);
@@ -134,7 +165,8 @@ public class FroggerPlayer : MonoBehaviour
 
         if(counter < 0f)
         {
-            theAnim.SetLayerWeight(2, prevWeight);
+            textObj.text = "";
+            theAnim.SetLayerWeight(1, prevWeight);
             theAnim.SetBool("Pray", false);
             selling = false;
         }

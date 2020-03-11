@@ -36,7 +36,7 @@ public class FrostControlFrogger : MonoBehaviour
         //storedSpeed = SpeedScript.BaseSpeed;
         //SetTimer
         Timer = frostUpdate;
-        AnimWeightStore = PlayerAnim.GetLayerWeight(2);
+        AnimWeightStore = PlayerAnim.GetLayerWeight(1);
         AnimWeightStore *= 100f;
 
         
@@ -58,7 +58,7 @@ public class FrostControlFrogger : MonoBehaviour
         FrostFX.FrostAmount = Mathf.Clamp(Frost / 100, 0, 1);
         float FrostToAnim = Mathf.Clamp(Frost, AnimWeightStore, 100);
         
-        PlayerAnim.SetLayerWeight(2, FrostToAnim / 100);
+        PlayerAnim.SetLayerWeight(1, FrostToAnim / 100);
         Frost = Mathf.Lerp(Frost, frostLerp, Time.deltaTime * smooth);
     }
 

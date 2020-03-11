@@ -8,6 +8,7 @@ TagManager:
   - GenTrigger
   - Person
   - Exits
+  - Tourch
   layers:
   - Default
   - TransparentFX
