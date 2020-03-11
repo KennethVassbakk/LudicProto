@@ -3499,6 +3499,7 @@ GameObject:
   - component: {fileID: 206369182}
   - component: {fileID: 206369181}
   - component: {fileID: 206369184}
+  - component: {fileID: 206369185}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3589,6 +3590,27 @@ MonoBehaviour:
   minX: -1
   maxX: 1
   minMax: 0
+--- !u!114 &206369185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206369180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9044ef733a99ffa4aa7a986bb5e9a7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrostAmount: 0
+  EdgeSharpness: 0.78
+  minFrost: 0.05
+  maxFrost: 0.46
+  seethroughness: 0.2
+  distortion: 0.1
+  Frost: {fileID: 2800000, guid: 210743b88c99bcf45b28c3a4a4a3e178, type: 3}
+  FrostNormals: {fileID: 2800000, guid: 065247d136abaa042a330ab6a7b030fc, type: 3}
+  Shader: {fileID: 4800000, guid: db8aebe950ae3794aae5ed890f38549b, type: 3}
 --- !u!4 &212192512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 465814, guid: 3723d64fc927cf64dbe02ccedc32cfc9,
@@ -42244,7 +42266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Anim: {fileID: 0}
-  BaseSpeed: 8
+  BaseSpeed: 5
   keepMoving: 1
   player: {fileID: 6164347303078140809}
   targetPos: 0

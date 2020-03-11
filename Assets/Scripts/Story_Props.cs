@@ -23,6 +23,11 @@ public class Story_Props : MonoBehaviour
     private void Start()
     {
         _as = GetComponent<AudioSource>();
+
+        if (!Intro) return;
+
+        _as.clip = Intro;
+        _as.Play();
     }
 
     public void EndRun()
@@ -37,17 +42,29 @@ public class Story_Props : MonoBehaviour
     public void FinishSuccess(bool success) {
         EndRun();
         Debug.Log("Finished : " + success);
-        _as.clip = success ? Success : Failure;
-        _as.Play();
+        if (Success && success)
+        {
+            _as.clip = Success;
+            _as.Play();
+        }
+
+
+        if (Failure && !success)
+        {
+            _as.clip = Failure;
+            _as.Play();
+        }
 
         if (success)
         {
-            SuccessUI.SetActive(true);
+            if(SuccessUI)
+                SuccessUI.SetActive(true);
             
         }
         else
         {
-            FailureUI.SetActive(true);
+            if(FailureUI)
+                FailureUI.SetActive(true);
         }
 
         CrossFade.GetComponent<Animator>().SetTrigger("Start");
