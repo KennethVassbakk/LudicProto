@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Frogger.unity
     guid: 13cb6ce2fbea4164ab0fa1d56c772a2a
   - enabled: 1
+    path: Assets/Scenes/Alley.unity
+    guid: dcc4e4f1062ed214b8d67b1d970c0e21
+  - enabled: 1
     path: Assets/Scenes/EndCredits.unity
     guid: 422529f61352c514d9852f83a962546a
   m_configObjects:
