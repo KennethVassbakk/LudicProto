@@ -39,7 +39,7 @@ public class FroggerPeople : MonoBehaviour
 
 
         Exits = GameObject.FindGameObjectsWithTag("Exits");
-        Debug.Log(Exits.Length);
+
     }
 
     public void Update()

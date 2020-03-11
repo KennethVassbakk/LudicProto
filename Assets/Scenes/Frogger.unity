@@ -49924,6 +49924,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1530432560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1532068035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 133642, guid: 769a4c83e09c8fb4c93fd2b1eff616f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1265257376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532068039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532068035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrostAmount: 0
+  TimerInterval: 0
+  FrostControl: {fileID: 0}
 --- !u!1 &1533494155
 GameObject:
   m_ObjectHideFlags: 0
@@ -59432,6 +59453,7 @@ GameObject:
   - component: {fileID: 1849000737}
   - component: {fileID: 1849000736}
   - component: {fileID: 1849000735}
+  - component: {fileID: 1849000741}
   m_Layer: 2
   m_Name: ColdAir (1)
   m_TagString: Untagged
@@ -64218,6 +64240,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.00001}
+--- !u!114 &1849000741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849000734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8113062ae569a4548b2c48dfcc20c96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrostAmount: 10
+  TimerInterval: 3
+  FrostControl: {fileID: 3952710713691252630}
 --- !u!1001 &1853142245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64994,7 +65031,7 @@ MonoBehaviour:
   TheSun: {fileID: 456684029}
   DayColor: {r: 0.6509804, g: 0.91764706, b: 0.827451, a: 0}
   NightColor: {r: 0.59607846, g: 0.7294118, b: 0.8392157, a: 0}
-  LevelTimeMinutes: 3
+  LevelTimeMinutes: 0.5
   fog1: {fileID: 1941027733}
   fog2: {fileID: 1849000734}
   cart: {fileID: 483593378}
@@ -67196,6 +67233,7 @@ GameObject:
   - component: {fileID: 1941027734}
   - component: {fileID: 1941027739}
   - component: {fileID: 1941027738}
+  - component: {fileID: 1941027740}
   - component: {fileID: 1941027737}
   m_Layer: 2
   m_Name: ColdAir
@@ -71983,6 +72021,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 37.61, y: 41.2, z: 8.100002}
   m_Center: {x: 0.5, y: 0, z: 0}
+--- !u!114 &1941027740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941027733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8113062ae569a4548b2c48dfcc20c96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrostAmount: 10
+  TimerInterval: 3
+  FrostControl: {fileID: 3952710713691252630}
 --- !u!1001 &1943053526
 PrefabInstance:
   m_ObjectHideFlags: 0

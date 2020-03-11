@@ -10,11 +10,9 @@ public class FroggerHotSpot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<FroggerPlayer>().Warmth(true, transform.gameObject);
-            Debug.Log("Entered2");
             StoredValue = other.GetComponent<FrostControlFrogger>().FrostToGive;
             other.GetComponent<FrostControlFrogger>().FrostToGive = HeatValue * -1f;
         }

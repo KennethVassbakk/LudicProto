@@ -48,6 +48,10 @@ public class FroggerLevelManager : MonoBehaviour
 
         if (counter < leavetrigger && counter < 0f)
         {
+            if (People.Length < personToLeave)
+            {
+                return;
+            }
             People[personToLeave].GetComponentInParent<FroggerPeople>().Interact(0f, false);
             personToLeave += 1;
             leavetrigger = counter - LeaveInterval;

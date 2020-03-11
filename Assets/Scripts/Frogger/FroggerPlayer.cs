@@ -91,7 +91,6 @@ public class FroggerPlayer : MonoBehaviour
                     Vector3 Direction = transform.position - hit.transform.position;
 
                     float dist = Direction.magnitude;
-                    Debug.Log(dist);
                     if (dist < 3f)
                     {
                         Person = hit.transform.gameObject;
