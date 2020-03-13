@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class FroggerLevelManager : MonoBehaviour
 {
-    GameObject[] People;
+    //public GameObject[] People;
+    public List<GameObject> peopleList;
+    private GameObject player;
     float LeaveInterval;
     float leavetrigger;
-    int personToLeave = 0;
 
     //The Sunlight
     [Header("Sunlight Options")]
@@ -33,8 +34,13 @@ public class FroggerLevelManager : MonoBehaviour
         counter = LevelTimeMinutes;
 
         // Give a random person in the scene the objective.
-        People = GameObject.FindGameObjectsWithTag("Person");
-        People[Random.Range(0, People.Length - 1)].GetComponentInParent<FroggerPeople>().PlayerGoal = true;
+        GameObject[] People = GameObject.FindGameObjectsWithTag("Person");
+        foreach (GameObject i in People)
+        {
+            peopleList.Add(i);
+        }
+        player = GameObject.FindGameObjectWithTag("Player");
+        peopleList[Random.Range(0, peopleList.Count - 1)].GetComponentInParent<FroggerPeople>().PlayerGoal = true;
 
         LeaveInterval = LevelTimeMinutes / People.Length;
         leavetrigger = LevelTimeMinutes - LeaveInterval;
@@ -46,15 +52,21 @@ public class FroggerLevelManager : MonoBehaviour
     {
         counter -= Time.deltaTime;
 
-        if (counter < leavetrigger && counter < 0f)
+        if (counter < leavetrigger && counter > 0f)
         {
-            if (People.Length < personToLeave)
+            if (peopleList.Count - 1 > 0f)
             {
-                return;
+                GameObject person = peopleList[Random.Range(0, peopleList.Count - 1)];
+                person.GetComponentInParent<FroggerPeople>().Interact(0f, false);
+                peopleList.Remove(person);
+                leavetrigger = counter - LeaveInterval + 1f;
             }
-            People[personToLeave].GetComponentInParent<FroggerPeople>().Interact(0f, false);
-            personToLeave += 1;
-            leavetrigger = counter - LeaveInterval;
+
+        }
+
+        if (counter < 10f && counter > 9f)
+        {
+            player.GetComponent<FroggerPlayer>().Dialogue("It's getting late, I better head home", 5f);
         }
 
          if (counter < 0f)

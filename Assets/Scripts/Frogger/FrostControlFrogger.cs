@@ -24,13 +24,15 @@ public class FrostControlFrogger : MonoBehaviour
 
     float smooth = 2f;
     float AnimWeightStore;
-    
+
+    GameObject _gm;
 
     [Range(-50, 50)] public float FrostToGive;
 
     // Start is called before the first frame update
     void Start()
     {
+        _gm = GameObject.Find("_GM");
         FrostFX = Camera.main.GetComponent<FrostEffect>();
         //SpeedScript = GetComponent<test_runner>();
         //storedSpeed = SpeedScript.BaseSpeed;
@@ -51,6 +53,11 @@ public class FrostControlFrogger : MonoBehaviour
             AddFrost(FrostToGive);
             Timer = frostUpdate;
             return;
+        }
+
+        if (Frost > 90f)
+        {
+            _gm.GetComponentInParent<SceneSwitcher>().NextLevel();
         }
 
         //Frost = Mathf.Lerp(Frost, frostLerp, t);

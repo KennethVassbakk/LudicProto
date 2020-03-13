@@ -27,18 +27,22 @@ public class FroggerPlayer : MonoBehaviour
 
     //Try to sell
     public float SaleTime;
+    //TextAreaAttribute(int minLines, int maxLines);
+    [TextArea(5, 10)]
     public List<string> SaleLines;
     public TextMeshPro textObj;
 
     private bool selling;
     private GameObject Person;
 
+    private float dialogueCounter;
+    private bool talk;
+    private string dialogueText;
 
     //Animation
     private Vector3 previousPosition;
     public float curSpeed;
     public Animator theAnim;
-    private float prevWeight;
 
     private void Awake()
     {
@@ -52,7 +56,6 @@ public class FroggerPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        prevWeight = theAnim.GetLayerWeight(1);
         Player = GetComponent<NavMeshAgent>();
         selling = false;
     }
@@ -66,7 +69,16 @@ public class FroggerPlayer : MonoBehaviour
 
         theAnim.SetFloat("Speed", curSpeed);
 
-
+        if (talk == true)
+        {
+            dialogueCounter -= Time.deltaTime;
+            textObj.text = dialogueText;
+            if (dialogueCounter < 0f)
+            {
+                textObj.text = "";
+                talk = false;
+            }
+        }
 
         if (ClickDetect > 0.1f && selling == false)
         {
@@ -96,7 +108,9 @@ public class FroggerPlayer : MonoBehaviour
                         Person = hit.transform.gameObject;
                         counter = SaleTime;
                         textObj.text = SaleLines[Random.Range(0, SaleLines.Count - 1)];
+                        talk = false;
                         selling = true;
+                        
                         hit.transform.parent.GetComponent<FroggerPeople>().Interact(SaleTime, true);
                         return;
                     }
@@ -104,6 +118,9 @@ public class FroggerPlayer : MonoBehaviour
 
                 Player.SetDestination(hit.point);
             }
+
+
+
         }
         else
         {
@@ -156,7 +173,6 @@ public class FroggerPlayer : MonoBehaviour
     public void TryToSell()
     {
         textObj.transform.rotation.SetLookRotation(textObj.transform.position - Camera.main.transform.position);
-        theAnim.SetLayerWeight(1, 1f);
         theAnim.SetBool("Pray", true);
         counter -= Time.deltaTime;
         Vector3 lookAt = new Vector3(Person.transform.position.x, transform.position.y, Person.transform.position.z);
@@ -165,7 +181,6 @@ public class FroggerPlayer : MonoBehaviour
         if(counter < 0f)
         {
             textObj.text = "";
-            theAnim.SetLayerWeight(1, prevWeight);
             theAnim.SetBool("Pray", false);
             selling = false;
         }
@@ -180,6 +195,13 @@ public class FroggerPlayer : MonoBehaviour
         {
             theAnim.SetBool("Pray", heat);
         }
+    }
+
+    public void Dialogue(string dialogue, float talkTime)
+    {
+        dialogueCounter = talkTime;
+        dialogueText = dialogue;
+        talk = true;
     }
 
     private void OnEnable()

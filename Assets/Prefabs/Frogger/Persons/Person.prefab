@@ -86,14 +86,17 @@ MonoBehaviour:
   - {fileID: 5197242498430325464}
   - {fileID: 1127329540945298606}
   Exits: []
+  Scarf: {fileID: 0}
   go: 0
   PlayerGoal: 0
   PeopleDialogue: {fileID: 0}
   NegativeResponst:
-  - Move Away!
-  - Get away you fiend
-  - Spam Mail!
-  KindAnswer: oh no dear child
+  - No, stop bothering me!
+  - 'I got no coin to spare,
+
+    for the likes of you.'
+  - 'Be gone child ! '
+  KindAnswer: No thanks you, dear child
   GiveComment: but have this scarf
 --- !u!195 &8425095571736006206
 NavMeshAgent:
