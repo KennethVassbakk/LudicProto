@@ -6,6 +6,7 @@ public class FroggerNightFrost : MonoBehaviour
 {
     Rigidbody theRb;
 
+    //private Light[] lights;
     public List<Light> Lights;
     private bool haveLights;
     public GameObject Midlvl;
@@ -34,7 +35,8 @@ public class FroggerNightFrost : MonoBehaviour
         }
         
 
-        if (haveLights == true)
+
+        if (Lights.Count > 0)
         {
             DimLights();
         }
@@ -45,20 +47,17 @@ public class FroggerNightFrost : MonoBehaviour
     {
         if (other.CompareTag("Tourch"))
         {
+            other.tag = "Untagged";
             other.GetComponentInChildren<ParticleSystem>().Stop();
             other.GetComponentInChildren<FroggerHotSpot>().HeatValue = 0f;
-            Light[] lights = other.GetComponentsInChildren<Light>();
-
+            new Light[] lights = other.GetComponentsInChildren<Light>();
+            Lights.AddRange(lights);
+            /*
             foreach (Light i in lights)
             {
-                if (i.intensity == 0f)
-                {
-                    return;
-                }
                 Lights.Add(i);
-                haveLights = true;
             }
-
+            */
             
         }
     }

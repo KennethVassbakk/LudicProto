@@ -38845,6 +38845,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1153676717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1155039898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131582, guid: c304739a8731e6140ba088e0f6bdf66c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1742369512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1155039904
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155039898}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.585, y: 0.265, z: 0.00001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.20700002, z: 0.27}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1156172026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60486,7 +60508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1849000735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66184,6 +66206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcf30dd311351d45962b9a61b99c1f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peopleList: []
   TheSun: {fileID: 456684029}
   DayColor: {r: 0.6509804, g: 0.91764706, b: 0.827451, a: 0}
   NightColor: {r: 0.59607846, g: 0.7294118, b: 0.8392157, a: 0}
@@ -68411,7 +68434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1941027734
 ParticleSystemRenderer:
   serializedVersion: 6

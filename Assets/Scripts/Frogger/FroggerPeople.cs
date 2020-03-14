@@ -132,6 +132,10 @@ public class FroggerPeople : MonoBehaviour
             theAnim.SetBool("Idle", true);
             theAnim.SetBool("Walk", false);
         }
+        if (playerInter == false && speak == true)
+        {
+            return;
+        }
         playerInteracted = playerInter;
         speak = playerInter;
         counter = Length * 2f;

@@ -36,7 +36,6 @@ public class FroggerAddFrost : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerHere = true;
-            FrostControl =  other.transform.parent.GetComponent<FrostControlFrogger>();
             FrostControl.AddFrost(FrostAmount);
             Camera.main.GetComponent<affectFrost>().setFreezing(true);
         }

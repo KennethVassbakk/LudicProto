@@ -110,7 +110,8 @@ public class FroggerPlayer : MonoBehaviour
                         textObj.text = SaleLines[Random.Range(0, SaleLines.Count - 1)];
                         talk = false;
                         selling = true;
-                        
+                        textObj.transform.position = transform.position + new Vector3(0f, 3f, 0f);
+                        textObj.transform.rotation.SetLookRotation(textObj.transform.position - Camera.main.transform.position);
                         hit.transform.parent.GetComponent<FroggerPeople>().Interact(SaleTime, true);
                         return;
                     }
@@ -172,7 +173,7 @@ public class FroggerPlayer : MonoBehaviour
 
     public void TryToSell()
     {
-        textObj.transform.rotation.SetLookRotation(textObj.transform.position - Camera.main.transform.position);
+
         theAnim.SetBool("Pray", true);
         counter -= Time.deltaTime;
         Vector3 lookAt = new Vector3(Person.transform.position.x, transform.position.y, Person.transform.position.z);
@@ -199,6 +200,7 @@ public class FroggerPlayer : MonoBehaviour
 
     public void Dialogue(string dialogue, float talkTime)
     {
+
         dialogueCounter = talkTime;
         dialogueText = dialogue;
         talk = true;

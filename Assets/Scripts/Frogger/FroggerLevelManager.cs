@@ -56,7 +56,7 @@ public class FroggerLevelManager : MonoBehaviour
         {
             if (peopleList.Count - 1 > 0f)
             {
-                GameObject person = peopleList[Random.Range(0, peopleList.Count - 1)];
+                GameObject person = peopleList[Random.Range(0, peopleList.Count)];
                 person.GetComponentInParent<FroggerPeople>().Interact(0f, false);
                 peopleList.Remove(person);
                 leavetrigger = counter - LeaveInterval + 1f;
