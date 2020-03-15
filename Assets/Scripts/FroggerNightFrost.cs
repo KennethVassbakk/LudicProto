@@ -50,14 +50,14 @@ public class FroggerNightFrost : MonoBehaviour
             other.tag = "Untagged";
             other.GetComponentInChildren<ParticleSystem>().Stop();
             other.GetComponentInChildren<FroggerHotSpot>().HeatValue = 0f;
-            new Light[] lights = other.GetComponentsInChildren<Light>();
+            Light[] lights = other.GetComponentsInChildren<Light>();
             Lights.AddRange(lights);
-            /*
+            
             foreach (Light i in lights)
             {
                 Lights.Add(i);
             }
-            */
+            
             
         }
     }
