@@ -58,7 +58,10 @@ public class FroggerNightFrost : MonoBehaviour
                 Lights.Add(i);
             }
             
-            
+        }
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<FroggerPlayer>().Dialogue("so ... cold ..", 2f);
         }
     }
 

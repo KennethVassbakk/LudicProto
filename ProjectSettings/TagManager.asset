@@ -9,6 +9,7 @@ TagManager:
   - Person
   - Exits
   - Tourch
+  - TutorialPerson
   layers:
   - Default
   - TransparentFX

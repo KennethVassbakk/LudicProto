@@ -10,10 +10,10 @@ using TMPro;
 
 public class FroggerPlayer : MonoBehaviour
 {
-    private NavMeshAgent Player;
+    public NavMeshAgent Player;
     private Vector3 Destination;
     private float ClickDetect;
-    private bool click;
+    public bool click;
 
     public GameObject MoveIndicator;
     private float counter;
@@ -24,6 +24,7 @@ public class FroggerPlayer : MonoBehaviour
     private bool warmingUp;
     private GameObject Tourch;
     private float turnSpeed = 2f;
+    
 
     //Try to sell
     public float SaleTime;
@@ -44,6 +45,8 @@ public class FroggerPlayer : MonoBehaviour
     public float curSpeed;
     public Animator theAnim;
 
+    public bool inControl;
+
     private void Awake()
     {
         inputAction = new PlayerInput();
@@ -56,6 +59,7 @@ public class FroggerPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inControl = true;
         Player = GetComponent<NavMeshAgent>();
         selling = false;
     }
@@ -63,63 +67,65 @@ public class FroggerPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 curMove = transform.position - previousPosition;
-        curSpeed = curMove.magnitude / Time.deltaTime;
-        previousPosition = transform.position;
-
-        theAnim.SetFloat("Speed", curSpeed);
-
-        if (talk == true)
+        if (inControl == true)
         {
-            dialogueCounter -= Time.deltaTime;
-            textObj.text = dialogueText;
-            if (dialogueCounter < 0f)
+            Vector3 curMove = transform.position - previousPosition;
+            curSpeed = curMove.magnitude / Time.deltaTime;
+            previousPosition = transform.position;
+
+            theAnim.SetFloat("Speed", curSpeed);
+
+            if (talk == true)
             {
-                textObj.text = "";
-                talk = false;
-            }
-        }
-
-        if (ClickDetect > 0.1f && selling == false)
-        {
-
-
-            Player.isStopped = false;
-            Ray castPoint = Camera.main.ScreenPointToRay(Destination);
-
-            RaycastHit hit;
-            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-            {
-                if (click == false)
+                dialogueCounter -= Time.deltaTime;
+                textObj.text = dialogueText;
+                if (dialogueCounter < 0f)
                 {
-                    click = true;
-                    MoveIndicator.transform.position = hit.point;
-                    MoveIndicator.SetActive(true);
+                    textObj.text = "";
+                    talk = false;
                 }
+            }
 
-                if (hit.transform.gameObject.CompareTag("Person"))
+            if (ClickDetect > 0.1f && selling == false)
+            {
+                Player.isStopped = false;
+                Ray castPoint = Camera.main.ScreenPointToRay(Destination);
+
+                RaycastHit hit;
+                if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
                 {
-                    MoveIndicator.SetActive(false);
-                    Vector3 Direction = transform.position - hit.transform.position;
-
-                    float dist = Direction.magnitude;
-                    if (dist < 3f)
+                    if (click == false)
                     {
-                        Person = hit.transform.gameObject;
-                        counter = SaleTime;
-                        textObj.text = SaleLines[Random.Range(0, SaleLines.Count - 1)];
-                        talk = false;
-                        selling = true;
-                        textObj.transform.position = transform.position + new Vector3(0f, 3f, 0f);
-                        textObj.transform.rotation.SetLookRotation(textObj.transform.position - Camera.main.transform.position);
-                        hit.transform.parent.GetComponent<FroggerPeople>().Interact(SaleTime, true);
-                        return;
+                        click = true;
+                        MoveIndicator.transform.position = hit.point;
+                        MoveIndicator.SetActive(true);
                     }
+
+                    if (hit.transform.gameObject.CompareTag("Person") || hit.transform.gameObject.CompareTag("TutorialPerson"))
+                    {
+                        MoveIndicator.SetActive(false);
+                        Vector3 Direction = transform.position - hit.transform.position;
+
+                        float dist = Direction.magnitude;
+                        if (dist < 3f)
+                        {
+                            Person = hit.transform.gameObject;
+                            counter = SaleTime;
+                            textObj.text = SaleLines[Random.Range(0, SaleLines.Count - 1)];
+                            talk = false;
+                            selling = true;
+                            textObj.transform.position = transform.position + new Vector3(0f, 3f, 0f);
+                            textObj.transform.rotation.SetLookRotation(textObj.transform.position - Camera.main.transform.position);
+                            hit.transform.parent.GetComponent<FroggerPeople>().Interact(SaleTime, true);
+                            return;
+                        }
+                    }
+
+                    Player.SetDestination(hit.point);
                 }
 
-                Player.SetDestination(hit.point);
-            }
 
+            }
 
 
         }
@@ -200,7 +206,7 @@ public class FroggerPlayer : MonoBehaviour
 
     public void Dialogue(string dialogue, float talkTime)
     {
-
+        textObj.transform.position = transform.position + new Vector3(0f, 3f, 0f);
         dialogueCounter = talkTime;
         dialogueText = dialogue;
         talk = true;

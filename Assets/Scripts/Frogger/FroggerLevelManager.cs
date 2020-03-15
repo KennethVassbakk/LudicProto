@@ -20,12 +20,19 @@ public class FroggerLevelManager : MonoBehaviour
     private float counter;
     private float t = 0f;
 
+
+    private float TutorialCounter;
+    private bool tutorialCheck;
+
+
     [Header("The Fog")]
     public GameObject fog1;
     public GameObject fog2;
 
     public Animator cart;
 
+    public bool gameStarted;
+    private bool introText;
 
     void Start()
     {
@@ -44,46 +51,61 @@ public class FroggerLevelManager : MonoBehaviour
 
         LeaveInterval = LevelTimeMinutes / People.Length;
         leavetrigger = LevelTimeMinutes - LeaveInterval;
-        
+        TheSun.color = DayColor;
     }
 
 
     void Update()
     {
-        counter -= Time.deltaTime;
 
-        if (counter < leavetrigger && counter > 0f)
+        if (gameStarted == true)
         {
-            if (peopleList.Count - 1 > 0f)
+            if (introText == false)
             {
-                GameObject person = peopleList[Random.Range(0, peopleList.Count)];
-                person.GetComponentInParent<FroggerPeople>().Interact(0f, false);
-                peopleList.Remove(person);
-                leavetrigger = counter - LeaveInterval + 1f;
+                player.GetComponent<FroggerPlayer>().Dialogue("It's getting dark soon, I really hope someone will buy from me...", 4f);
+                introText = true;
+            }
+            counter -= Time.deltaTime;
+            if (counter < leavetrigger && counter > 0f)
+            {
+                if (peopleList.Count - 1 > 0f)
+                {
+                    GameObject person = peopleList[Random.Range(0, peopleList.Count)];
+                    person.GetComponentInParent<FroggerPeople>().Interact(0f, false);
+                    peopleList.Remove(person);
+                    leavetrigger = counter - LeaveInterval + 1f;
+                }
             }
 
-        }
+            if (counter < 10f && counter > 9f)
+            {
+                player.GetComponent<FroggerPlayer>().Dialogue("It's getting late, I better head home", 5f);
+            }
 
-        if (counter < 10f && counter > 9f)
+            if (counter < 0f)
+            {
+                fog1.SetActive(true);
+                fog2.SetActive(true);
+                cart.SetTrigger("Move");
+            }
+
+            //Lerp Sun Color for the day's duration
+            TheSun.color = Color.Lerp(DayColor, NightColor, t);
+            t += Time.deltaTime / LevelTimeMinutes;
+        }
+        else
         {
-            player.GetComponent<FroggerPlayer>().Dialogue("It's getting late, I better head home", 5f);
+            TutorialCounter += Time.deltaTime;
+
+            if (TutorialCounter > 2f)
+            {
+                if (tutorialCheck == false)
+                {
+                    player.GetComponent<FroggerPlayer>().Dialogue("it's so cold today, I should warm up by the fire", 4f);
+                    tutorialCheck = true;
+                }
+
+            }
         }
-
-         if (counter < 0f)
-        {
-            fog1.SetActive(true);
-            fog2.SetActive(true);
-            cart.SetTrigger("Move");
-        }
-
-        //Lerp Sun Color for the day's duration
-        TheSun.color = Color.Lerp(DayColor, NightColor, t);
-        t += Time.deltaTime / LevelTimeMinutes;
-    }
-
-
-    public void Changescene()
-    {
-
     }
 }
