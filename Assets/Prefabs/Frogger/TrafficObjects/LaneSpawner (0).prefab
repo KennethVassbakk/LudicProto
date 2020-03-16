@@ -129,7 +129,8 @@ MonoBehaviour:
   Waypoint: {fileID: 519944603790569164}
   TrafficObjects:
   - {fileID: 5847529589047253435, guid: 3e76dd04218ce1542bf7fe4cf3fced42, type: 3}
-  SpawnTimer: 30
+  MaxTime: 30
+  MinTime: 15
 --- !u!1 &519944603790569164
 GameObject:
   m_ObjectHideFlags: 0

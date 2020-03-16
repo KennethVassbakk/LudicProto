@@ -10,13 +10,14 @@ public class FroggerTraffic : MonoBehaviour
 
     public List<GameObject> TrafficObjects;
 
-    public float SpawnTimer;
+    public float MaxTime;
+    public float MinTime;
     private float counter;
 
     // Start is called before the first frame update
     void Start()
     {
-        counter = SpawnTimer;
+        counter = Random.Range(MinTime, MaxTime);
         SpawnTraffic();
     }
 
@@ -28,7 +29,7 @@ public class FroggerTraffic : MonoBehaviour
         if(counter < 0)
         {
             SpawnTraffic();
-            counter = SpawnTimer;
+            counter = Random.Range(MinTime, MaxTime);
         }
     }
 

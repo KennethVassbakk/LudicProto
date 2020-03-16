@@ -87,6 +87,15 @@ public class FroggerLevelManager : MonoBehaviour
                 fog1.SetActive(true);
                 fog2.SetActive(true);
                 cart.SetTrigger("Move");
+                /*
+                GameObject[] TrafficSpawners = GameObject.FindGameObjectsWithTag("Traffic");
+
+                foreach(GameObject i in TrafficSpawners)
+                {
+                    i.GetComponent<FroggerTraffic>().enabled = false;
+                    i.gameObject.tag = "Untagged";
+                }
+                */
             }
 
             //Lerp Sun Color for the day's duration

@@ -2510,6 +2510,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaneSpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 519944603228747471, guid: 8fab80afbd127994db85732e3bab6129,
+        type: 3}
+      propertyPath: m_TagString
+      value: Traffic
+      objectReference: {fileID: 0}
     - target: {fileID: 519944603790569160, guid: 8fab80afbd127994db85732e3bab6129,
         type: 3}
       propertyPath: nextWaypoint
@@ -6349,6 +6354,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 134225949}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &135749893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+    type: 3}
+  m_PrefabInstance: {fileID: 165511443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &139002611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8124,6 +8135,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 165069348}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &165511443
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 749302400}
+    m_Modifications:
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.441978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3876666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.684331
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841518771129387333, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_Name
+      value: Fire_Lane2 (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59e57dc86349c1745986059759ccb431, type: 3}
 --- !u!1001 &166689739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33649,6 +33729,7 @@ Transform:
   - {fileID: 1243892643}
   - {fileID: 1504254600}
   - {fileID: 775861594}
+  - {fileID: 135749893}
   m_Father: {fileID: 179807603}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39295,6 +39376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaneSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 519944603228747471, guid: 8fab80afbd127994db85732e3bab6129,
+        type: 3}
+      propertyPath: m_TagString
+      value: Traffic
       objectReference: {fileID: 0}
     - target: {fileID: 519944603790569163, guid: 8fab80afbd127994db85732e3bab6129,
         type: 3}
@@ -71745,6 +71831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LaneSpawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 519944603228747471, guid: 8fab80afbd127994db85732e3bab6129,
+        type: 3}
+      propertyPath: m_TagString
+      value: Traffic
       objectReference: {fileID: 0}
     - target: {fileID: 519944603790569163, guid: 8fab80afbd127994db85732e3bab6129,
         type: 3}
@@ -104393,10 +104484,20 @@ PrefabInstance:
       propertyPath: Waypoint
       value: 
       objectReference: {fileID: 1524990577}
+    - target: {fileID: 519944603228747469, guid: 8fab80afbd127994db85732e3bab6129,
+        type: 3}
+      propertyPath: MaxTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 519944603228747471, guid: 8fab80afbd127994db85732e3bab6129,
         type: 3}
       propertyPath: m_Name
       value: LaneSpawner (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 519944603228747471, guid: 8fab80afbd127994db85732e3bab6129,
+        type: 3}
+      propertyPath: m_TagString
+      value: Traffic
       objectReference: {fileID: 0}
     - target: {fileID: 519944603790569163, guid: 8fab80afbd127994db85732e3bab6129,
         type: 3}
