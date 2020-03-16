@@ -13,8 +13,11 @@ public class FroggerNightFrost : MonoBehaviour
 
     private bool Arrived;
 
+    private GameObject player;
+
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         theRb = GetComponent<Rigidbody>();
     }
     private void Update()
@@ -47,6 +50,11 @@ public class FroggerNightFrost : MonoBehaviour
     {
         if (other.CompareTag("Tourch"))
         {
+
+            if(other.GetComponent<FroggerHotSpot>().playerInside == true)
+            {
+                other.GetComponent<FroggerHotSpot>().KillHeat();
+            }
             other.tag = "Untagged";
             other.GetComponentInChildren<ParticleSystem>().Stop();
             other.GetComponentInChildren<FroggerHotSpot>().HeatValue = 0f;

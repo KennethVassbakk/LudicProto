@@ -10,6 +10,7 @@ TagManager:
   - Exits
   - Tourch
   - TutorialPerson
+  - Traffic
   layers:
   - Default
   - TransparentFX

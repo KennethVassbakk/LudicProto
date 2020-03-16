@@ -179,7 +179,6 @@ public class FroggerPlayer : MonoBehaviour
 
     public void TryToSell()
     {
-
         theAnim.SetBool("Pray", true);
         counter -= Time.deltaTime;
         Vector3 lookAt = new Vector3(Person.transform.position.x, transform.position.y, Person.transform.position.z);

@@ -6,16 +6,16 @@ NavMeshProjectSettings:
   serializedVersion: 2
   areas:
   - name: Walkable
-    cost: 1
+    cost: 2
   - name: Not Walkable
     cost: 1
   - name: Jump
+    cost: 3
+  - name: Road
+    cost: 1
+  - name: Tutorial
     cost: 2
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
-  - name: 
+  - name: RoadSeperator
     cost: 1
   - name: 
     cost: 1
@@ -104,5 +104,5 @@ NavMeshProjectSettings:
     debug:
       m_Flags: 0
   m_SettingNames:
-  - Humanoid
+  - Horse
   - Person
