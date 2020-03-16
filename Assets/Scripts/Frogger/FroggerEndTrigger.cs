@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class FroggerEndTrigger : MonoBehaviour
 {
+
+    private GameObject GM;
+
+    private void Awake()
+    {
+        GM = GameObject.Find("_GM");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) { GetComponentInParent<SceneSwitcher>().NextLevel(); }
+        if (other.CompareTag("Player")) { GM.GetComponent<SceneSwitcher>().NextLevel(); }
     }
 }

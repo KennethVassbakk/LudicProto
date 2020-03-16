@@ -6,6 +6,7 @@ public class FroggerExitTutorial : MonoBehaviour
 {
     public GameObject NewDestination;
 
+    public GameObject theLine;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class FroggerExitTutorial : MonoBehaviour
         {
             other.GetComponent<FroggerPlayer>().inControl = false;
             other.GetComponent<FroggerPlayer>().Player.SetDestination(NewDestination.transform.position);
+            theLine.SetActive(false);
         }
     }
 }
