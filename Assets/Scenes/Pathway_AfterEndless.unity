@@ -6082,8 +6082,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.85433334, g: 0.9137255, b: 0.8945104, a: 1}
-  m_Intensity: 1.27
+  m_Color: {r: 0.5306604, g: 0.6169009, b: 0.7075472, a: 1}
+  m_Intensity: 0.39
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -22119,9 +22119,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1318949f3a5a1f4b8bf7f210efef2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  click: 0
+  MoveIndicator: {fileID: 0}
   SaleTime: 3
+  SaleLines: []
+  textObj: {fileID: 0}
   curSpeed: 0
   theAnim: {fileID: 8058356722441754624}
+  inControl: 0
 --- !u!114 &3952710713691252630
 MonoBehaviour:
   m_ObjectHideFlags: 0
