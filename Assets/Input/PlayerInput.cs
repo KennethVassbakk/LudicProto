@@ -41,6 +41,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseIt"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""77e6bb77-68d0-470c-8bfa-3c0dc26a397a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -252,6 +260,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""TouchDetect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75345975-8ef3-4e34-9abe-4e7043d99805"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": ""Press(pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseIt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +288,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_PlayerControls_Move = m_PlayerControls.FindAction("Move", throwIfNotFound: true);
         m_PlayerControls_TouchMove = m_PlayerControls.FindAction("TouchMove", throwIfNotFound: true);
         m_PlayerControls_TouchDetect = m_PlayerControls.FindAction("TouchDetect", throwIfNotFound: true);
+        m_PlayerControls_PauseIt = m_PlayerControls.FindAction("PauseIt", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -321,6 +341,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerControls_Move;
     private readonly InputAction m_PlayerControls_TouchMove;
     private readonly InputAction m_PlayerControls_TouchDetect;
+    private readonly InputAction m_PlayerControls_PauseIt;
     public struct PlayerControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -328,6 +349,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_PlayerControls_Move;
         public InputAction @TouchMove => m_Wrapper.m_PlayerControls_TouchMove;
         public InputAction @TouchDetect => m_Wrapper.m_PlayerControls_TouchDetect;
+        public InputAction @PauseIt => m_Wrapper.m_PlayerControls_PauseIt;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -346,6 +368,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @TouchDetect.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnTouchDetect;
                 @TouchDetect.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnTouchDetect;
                 @TouchDetect.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnTouchDetect;
+                @PauseIt.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPauseIt;
+                @PauseIt.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPauseIt;
+                @PauseIt.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnPauseIt;
             }
             m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -359,6 +384,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @TouchDetect.started += instance.OnTouchDetect;
                 @TouchDetect.performed += instance.OnTouchDetect;
                 @TouchDetect.canceled += instance.OnTouchDetect;
+                @PauseIt.started += instance.OnPauseIt;
+                @PauseIt.performed += instance.OnPauseIt;
+                @PauseIt.canceled += instance.OnPauseIt;
             }
         }
     }
@@ -377,5 +405,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnTouchMove(InputAction.CallbackContext context);
         void OnTouchDetect(InputAction.CallbackContext context);
+        void OnPauseIt(InputAction.CallbackContext context);
     }
 }

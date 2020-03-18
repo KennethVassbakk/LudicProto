@@ -28,6 +28,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "PauseIt",
+                    "type": "PassThrough",
+                    "id": "77e6bb77-68d0-470c-8bfa-3c0dc26a397a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -237,6 +245,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TouchDetect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75345975-8ef3-4e34-9abe-4e7043d99805",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "Press(pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseIt",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
