@@ -4917,7 +4917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 30
+  FrostAmount: 20
   TimerInterval: 2
   FrostControl: {fileID: 0}
 --- !u!1 &6909292565075877665
@@ -9831,7 +9831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 30
+  FrostAmount: 20
   TimerInterval: 2
   FrostControl: {fileID: 0}
 --- !u!1 &6909292566089818344
@@ -9940,7 +9940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee2ef258f6cdf244a0ef9b5cb9741da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrostAmount: 30
+  FrostAmount: 20
   TimerInterval: 2
   FrostControl: {fileID: 0}
 --- !u!1 &6909292566636558778
