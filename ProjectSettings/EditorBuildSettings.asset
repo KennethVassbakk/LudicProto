@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Alley.unity
     guid: dcc4e4f1062ed214b8d67b1d970c0e21
   - enabled: 1
+    path: Assets/Scenes/TreeAndGrandma.unity
+    guid: bdd4f505676c42a459105943e1e85f25
+  - enabled: 1
     path: Assets/Scenes/EndCredits.unity
     guid: 422529f61352c514d9852f83a962546a
   m_configObjects:
