@@ -8279,7 +8279,7 @@ PrefabInstance:
     - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.684331
+      value: 10.78
       objectReference: {fileID: 0}
     - target: {fileID: 4322433970785162722, guid: 59e57dc86349c1745986059759ccb431,
         type: 3}
@@ -8325,6 +8325,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire_Lane2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129313812328671772, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129313812328671772, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129313812328671772, guid: 59e57dc86349c1745986059759ccb431,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e57dc86349c1745986059759ccb431, type: 3}
@@ -87709,7 +87724,7 @@ MonoBehaviour:
   peopleList: []
   TheSun: {fileID: 456684029}
   DayColor: {r: 0.6509804, g: 0.91764706, b: 0.827451, a: 0}
-  NightColor: {r: 0.59607846, g: 0.7294118, b: 0.8392157, a: 0}
+  NightColor: {r: 0.5294118, g: 0.6156863, b: 0.7058824, a: 0}
   LevelTimeMinutes: 3
   fog1: {fileID: 1941027733}
   fog2: {fileID: 1849000734}
