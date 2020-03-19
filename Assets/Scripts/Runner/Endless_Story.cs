@@ -37,7 +37,15 @@ public class Endless_Story : MonoBehaviour
         StartCoroutine(FadeMixerGroup.StartFade(_as.outputAudioMixerGroup.audioMixer, "vol1", 1f, 0f, _as));
     }
 
-    public void finish(bool success) {
+    public void finish(bool success)
+    {
+        if (success)
+            GameProperties.HaveShoes = 1;
+        else
+        {
+            GameProperties.HaveShoes = 0;
+        }
+
         if(success && failAudio) {
             _as.clip = sucessAudio;
             _as.Play();
