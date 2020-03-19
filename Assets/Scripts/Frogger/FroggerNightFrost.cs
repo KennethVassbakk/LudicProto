@@ -6,90 +6,67 @@ public class FroggerNightFrost : MonoBehaviour
 {
     Rigidbody theRb;
 
-    //private Light[] lights;
-    public List<Light> Lights;
     private bool haveLights;
     public GameObject Midlvl;
 
-    private bool Arrived;
+    private bool _arrived;
 
     private GameObject player;
 
-    private void Start()
-    {
+    private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         theRb = GetComponent<Rigidbody>();
     }
-    private void Update()
-    {
-        if (Arrived == false)
-        {
-            theRb.MovePosition(transform.position + transform.right * Time.deltaTime);
+    private void Update() {
+        if (_arrived != false) return;
 
-            if (transform.position.x > Midlvl.transform.position.x)
-            {
-                Arrived = true;
-            }
-            if (transform.position.z > Midlvl.transform.position.z)
-            {
-                Arrived = true;
-            }
+        theRb.MovePosition(transform.position + transform.right * Time.deltaTime);
 
-        }
-        
-
-
-        if (Lights.Count > 0)
-        {
-            DimLights();
-        }
-
+        if (transform.position.x > Midlvl.transform.position.x || transform.position.z > Midlvl.transform.position.z)
+            _arrived = true;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Tourch"))
-        {
+    private void OnTriggerEnter(Collider other) {
+        if (!other.CompareTag("Tourch")) return;
 
-            if(other.GetComponent<FroggerHotSpot>().playerInside == true)
-            {
-                other.GetComponent<FroggerHotSpot>().KillHeat();
-            }
-            other.tag = "Untagged";
-            other.GetComponentInChildren<ParticleSystem>().Stop();
-            other.GetComponentInChildren<FroggerHotSpot>().HeatValue = 0f;
-            Light[] lights = other.GetComponentsInChildren<Light>();
-            Lights.AddRange(lights);
-            
-            foreach (Light i in lights)
-            {
-                Lights.Add(i);
-            }
-            
+        if (other.GetComponent<FroggerHotSpot>().playerInside == true) {
+            other.GetComponent<FroggerHotSpot>().KillHeat();
         }
-        if (other.CompareTag("Player"))
-        {
+
+        other.tag = "Untagged";
+        other.GetComponentInChildren<ParticleSystem>().Stop();
+        other.GetComponentInChildren<FroggerHotSpot>().HeatValue = 0f;
+        Light[] lights = other.GetComponentsInChildren<Light>();
+
+
+        foreach (var i in lights) {
+            i.gameObject.AddComponent<DimLights>();
+        }
+
+
+        if (other.CompareTag("Player")) {
             other.GetComponent<FroggerPlayer>().Dialogue("so ... cold ..", 2f);
         }
     }
 
-    private void DimLights()
-    {
-        foreach (Light i in Lights)
-        {
-            i.intensity = Mathf.Lerp(i.intensity, 0f, Time.deltaTime / 2);
+}
 
-            if (i.intensity < 0.1f)
-            {
-                i.intensity = 0f;
-                Lights.Remove(i);
-                if (Lights.Count < 0f)
-                {
-                    haveLights = false;
-                }
-            }
+/**
+ * No this is not the best way to do it.
+ * But i added it in here to fix an error
+ * -- Kenneth
+ */
+public class DimLights : MonoBehaviour
+{
+    private Light _lightSource;
+
+    private void Start() => _lightSource = GetComponent<Light>();
+
+    private void Update() {
+        _lightSource.intensity = Mathf.Lerp(_lightSource.intensity, 0f, Time.deltaTime / 2);
+
+        if (_lightSource.intensity <= 0.1f) {
+            this.gameObject.SetActive(false);
         }
-    
     }
-
 }
