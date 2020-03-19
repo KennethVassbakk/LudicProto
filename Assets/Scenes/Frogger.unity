@@ -81951,7 +81951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7674db1ade417e449be13b6f28aa5a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lights: []
   Midlvl: {fileID: 1653959312}
 --- !u!54 &1849000736
 Rigidbody:
@@ -87725,7 +87724,7 @@ MonoBehaviour:
   TheSun: {fileID: 456684029}
   DayColor: {r: 0.6509804, g: 0.91764706, b: 0.827451, a: 0}
   NightColor: {r: 0.5294118, g: 0.6156863, b: 0.7058824, a: 0}
-  LevelTimeMinutes: 3
+  LevelTimeMinutes: 0.2
   fog1: {fileID: 1941027733}
   fog2: {fileID: 1849000734}
   cart: {fileID: 483593378}
@@ -95680,7 +95679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7674db1ade417e449be13b6f28aa5a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lights: []
   Midlvl: {fileID: 1653959312}
 --- !u!54 &1941027738
 Rigidbody:
