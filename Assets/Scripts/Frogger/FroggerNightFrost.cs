@@ -27,22 +27,23 @@ public class FroggerNightFrost : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (!other.CompareTag("Tourch")) return;
+        if (other.CompareTag("Tourch"))
+        {
+            if (other.GetComponent<FroggerHotSpot>().playerInside == true) {
+                other.GetComponent<FroggerHotSpot>().KillHeat();
+            }
 
-        if (other.GetComponent<FroggerHotSpot>().playerInside == true) {
-            other.GetComponent<FroggerHotSpot>().KillHeat();
+            other.tag = "Untagged";
+            other.GetComponentInChildren<ParticleSystem>().Stop();
+            other.GetComponentInChildren<FroggerHotSpot>().HeatValue = 0f;
+            Light[] lights = other.GetComponentsInChildren<Light>();
+
+
+            foreach (var i in lights) {
+                i.gameObject.AddComponent<DimLights>();
+            }
+
         }
-
-        other.tag = "Untagged";
-        other.GetComponentInChildren<ParticleSystem>().Stop();
-        other.GetComponentInChildren<FroggerHotSpot>().HeatValue = 0f;
-        Light[] lights = other.GetComponentsInChildren<Light>();
-
-
-        foreach (var i in lights) {
-            i.gameObject.AddComponent<DimLights>();
-        }
-
 
         if (other.CompareTag("Player")) {
             other.GetComponent<FroggerPlayer>().Dialogue("so ... cold ..", 2f);
