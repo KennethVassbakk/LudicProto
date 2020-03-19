@@ -24,6 +24,7 @@ public class FroggerLevelManager : MonoBehaviour
     private float TutorialCounter;
     private bool tutorialCheck;
 
+    private float currentIntesity;
 
     [Header("The Fog")]
     public GameObject fog1;
@@ -52,6 +53,7 @@ public class FroggerLevelManager : MonoBehaviour
         LeaveInterval = LevelTimeMinutes / People.Length;
         leavetrigger = LevelTimeMinutes - LeaveInterval;
         TheSun.color = DayColor;
+        currentIntesity = TheSun.intensity;
     }
 
 
@@ -99,6 +101,7 @@ public class FroggerLevelManager : MonoBehaviour
             }
 
             //Lerp Sun Color for the day's duration
+            TheSun.intensity = Mathf.Lerp(currentIntesity, 0.39f, t);
             TheSun.color = Color.Lerp(DayColor, NightColor, t);
             t += Time.deltaTime / LevelTimeMinutes;
         }
@@ -110,6 +113,7 @@ public class FroggerLevelManager : MonoBehaviour
             {
                 if (tutorialCheck == false)
                 {
+
                     player.GetComponent<FroggerPlayer>().Dialogue("it's so cold today, I should warm up by the fire", 4f);
                     tutorialCheck = true;
                 }

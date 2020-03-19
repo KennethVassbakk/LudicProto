@@ -81965,6 +81965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7674db1ade417e449be13b6f28aa5a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lights: []
   Midlvl: {fileID: 1653959312}
 --- !u!54 &1849000736
 Rigidbody:
@@ -95693,6 +95694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7674db1ade417e449be13b6f28aa5a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lights: []
   Midlvl: {fileID: 1653959312}
 --- !u!54 &1941027738
 Rigidbody:
